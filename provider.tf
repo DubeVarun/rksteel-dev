@@ -6,12 +6,12 @@ terraform {
 
     }
   }
-  #    backend "azurerm" {
-  #     resource_group_name  = "rksteel-dev-rg"
-  #     storage_account_name = "rksteeltfstate2026"
-  #     container_name       = "tfstate"
-  #     key                  = "terraform.tfstate"
-  #   }
+      backend "azurerm" {
+       resource_group_name  = "rg-state"
+       storage_account_name = "statefilestore454"
+       container_name       = "tfstate"
+       key                  = "dev.tfstate"
+    }
 }
 
 provider "azurerm" {
