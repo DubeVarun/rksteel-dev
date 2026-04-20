@@ -5,4 +5,10 @@ pool: rksteel-local-pool
 
 
 steps:
-    - script: "Do test work"
+- task: PowerShell@2
+  inputs:
+    targetType: 'inline'
+    script: |
+      # Write your PowerShell commands here.
+      
+      Write-Host "Hello World"
