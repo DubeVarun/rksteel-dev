@@ -5,10 +5,12 @@ pool: rksteel-local-pool
 
 
 steps:
-- task: PowerShell@2
+- task: TerraformTask@5
   inputs:
-    targetType: 'inline'
-    script: |
-      # Write your PowerShell commands here.
-      
-      Write-Host "Hello World"
+    provider: 'azurerm'
+    command: 'init'
+    backendServiceArm: 'infrapipeline_sc'
+    backendAzureRmResourceGroupName: 'rg-state'
+    backendAzureRmStorageAccountName: 'statefilestore454'
+    backendAzureRmContainerName: 'tfstate'
+    backendAzureRmKey: 'dev.tfstate'
