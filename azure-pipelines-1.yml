@@ -41,6 +41,16 @@ jobs:
     displayName: Terraform Apply
     dependsOn: manualvalidation
     steps:
+
+      - task: TerraformTask@5
+        inputs:
+          provider: 'azurerm'
+          command: 'init'
+          backendServiceArm: 'infrapipeline_sc'
+          backendAzureRmResourceGroupName: 'rg-state'
+          backendAzureRmStorageAccountName: 'statefilestore454'
+          backendAzureRmContainerName: 'tfstate'
+          backendAzureRmKey: 'dev.tfstate'
       - task: TerraformTask@5
         inputs:
           provider: 'azurerm'
