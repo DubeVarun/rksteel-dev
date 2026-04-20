@@ -26,10 +26,7 @@ steps:
     command: 'plan'
     environmentServiceNameAzureRM: 'infrapipeline_sc'
 
-- task: ManualValidation@1
-  inputs:
-    notifyUsers: 'veloran@zohomail.in'
-    approvers: 'veloran@zohomail.in'
+
 
 - task: TerraformTask@5
   inputs:
