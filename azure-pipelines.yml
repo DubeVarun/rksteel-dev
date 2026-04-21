@@ -10,7 +10,7 @@ jobs:
         inputs:
           provider: 'azurerm'
           command: 'init'
-          backendServiceArm: 'rksteel-dev-conn'
+          backendServiceArm: 'infrapipeline_sc'
           backendAzureRmOverrideSubscriptionID: 'c94a57a8-66ad-4fe4-9d9d-e061aafd17c0'
           backendAzureRmResourceGroupName: 'rg-state'
           backendAzureRmStorageAccountName: 'statefilestore454'
