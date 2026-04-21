@@ -27,14 +27,14 @@ stages:
             provider: 'azurerm'
             command: 'validate'
 
-    - job: terraformplan
-      displayName: Terraform Plan
-      steps:
-        - task: TerraformTask@5
-          inputs:
-            provider: 'azurerm'
-            command: 'plan'
-            environmentServiceNameAzureRM: 'infrapipeline_sc'
+    # - job: terraformplan
+    #   displayName: Terraform Plan
+    #   steps:
+    #     - task: TerraformTask@5
+    #       inputs:
+    #         provider: 'azurerm'
+    #         command: 'plan'
+    #         environmentServiceNameAzureRM: 'infrapipeline_sc'
 
 # - stage:
 #   jobs:
