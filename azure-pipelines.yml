@@ -5,7 +5,7 @@ pool: rksteel-local-pool
 stages:
 - stage:
   jobs:
-    - job: terraforminit
+    - job: terraforminitandplan
       displayName: Terraform init and plan execution
       steps:
         - task: TerraformTask@5
@@ -19,22 +19,18 @@ stages:
             backendAzureRmContainerName: 'tfstate'
             backendAzureRmKey: 'rk.dev.tfstate'
 
-    - job: terraformvalidate
-      displayName: Terraform Validate
-      steps:
+
         - task: TerraformTask@5
           inputs:
             provider: 'azurerm'
             command: 'validate'
 
-    # - job: terraformplan
-    #   displayName: Terraform Plan
-    #   steps:
-    #     - task: TerraformTask@5
-    #       inputs:
-    #         provider: 'azurerm'
-    #         command: 'plan'
-    #         environmentServiceNameAzureRM: 'infrapipeline_sc'
+
+        - task: TerraformTask@5
+          inputs:
+            provider: 'azurerm'
+            command: 'plan'
+            environmentServiceNameAzureRM: 'infrapipeline_sc'
 
 # - stage:
 #   jobs:
