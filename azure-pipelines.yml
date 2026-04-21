@@ -17,4 +17,15 @@ jobs:
           backendAzureRmContainerName: 'tfstate'
           backendAzureRmKey: 'rk.dev.tfstate'
 
+      - task: TerraformTask@5
+        inputs:
+          provider: 'azurerm'
+          command: 'validate'
+
+      - task: TerraformTask@5
+        inputs:
+          provider: 'azurerm'
+          command: 'plan'
+          environmentServiceNameAzureRM: 'infrapipeline_sc'
+
           
