@@ -1,6 +1,6 @@
 trigger: none
 
-pool:rksteel-local-pool
+pool: rksteel-local-pool
   
 jobs:
   - job: terraforminitplan
