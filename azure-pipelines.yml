@@ -34,6 +34,17 @@ stages:
 
 - stage:
   jobs:
+    - job: manualvalidation
+      displayName: Manual Validation
+      pool: server
+      steps:
+        - task: ManualValidation@1
+          inputs:
+            notifyUsers: 'veloran@zohomail.in'
+            approvers: 'veloran@zohomail.in'
+
+- stage:
+  jobs:
     - job: terraformapply
       displayName: Terraform Apply
       steps:
